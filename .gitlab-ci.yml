@@ -1,0 +1,19 @@
+
+stages:
+  - build
+  - test
+
+build_image:
+  stage: build
+  script:
+    - docker build -t my-selenium-tests:latest .
+  tags:
+    - docker
+
+run_tests:
+  stage: test
+  script:
+    - docker run --shm-size=2g my-selenium-tests:latest
+  tags:
+    - docker
+    -
