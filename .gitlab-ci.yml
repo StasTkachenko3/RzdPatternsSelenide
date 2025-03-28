@@ -16,4 +16,3 @@ run_tests:
     - docker run --shm-size=2g my-selenium-tests:latest
   tags:
     - docker
-    -
