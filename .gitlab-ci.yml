@@ -6,13 +6,13 @@ stages:
 build_image:
   stage: build
   script:
-    - docker build -t my-selenium-tests:latest .
+    - docker build -t rzdselenide:1.0 .
   tags:
     - docker
 
 run_tests:
   stage: test
   script:
-    - docker run --shm-size=2g my-selenium-tests:latest
+    - docker run --shm-size=2g rzdselenide:1.0
   tags:
     - docker
